@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="悟空mcp">
+  <defs>
+    <linearGradient id="wkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="50%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+    <linearGradient id="wkGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+  <!-- 金箍圈光晕 -->
+  <circle cx="64" cy="64" r="60" fill="url(#wkBg)"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="url(#wkGold)" stroke-width="4" opacity="0.9"/>
+  <!-- 耳 -->
+  <ellipse cx="30" cy="60" rx="14" ry="18" fill="#7c2d12"/>
+  <ellipse cx="98" cy="60" rx="14" ry="18" fill="#7c2d12"/>
+  <!-- 脸 -->
+  <ellipse cx="64" cy="64" rx="36" ry="38" fill="#fcd34d"/>
+  <!-- 紧箍 -->
+  <path d="M36 46c10-12 52-12 56 0v10c-14-8-42-8-56 0V46z" fill="url(#wkGold)" stroke="#a16207" stroke-width="1.5"/>
+  <ellipse cx="64" cy="48" rx="28" ry="6" fill="none" stroke="#ca8a04" stroke-width="1.5" opacity="0.8"/>
+  <!-- 眼 -->
+  <ellipse cx="52" cy="62" rx="6" ry="7" fill="#1c1917"/>
+  <ellipse cx="76" cy="62" rx="6" ry="7" fill="#1c1917"/>
+  <circle cx="54" cy="60" r="2" fill="#fff" opacity="0.85"/>
+  <circle cx="78" cy="60" r="2" fill="#fff" opacity="0.85"/>
+  <!-- 鼻嘴 -->
+  <ellipse cx="64" cy="72" rx="5" ry="4" fill="#b45309"/>
+  <path d="M52 80q12 10 24 0" fill="none" stroke="#78350f" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- 祥云点缀 -->
+  <path d="M18 102c6-8 14-4 18 0 4-6 14-8 22-2" fill="none" stroke="#fff" stroke-width="2.5" opacity="0.35" stroke-linecap="round"/>
+  <path d="M88 100c8-6 16-2 22 6" fill="none" stroke="#fff" stroke-width="2.5" opacity="0.35" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,127 @@
+{
+	"name": "wukong-mcp",
+	"displayName": "悟空mcp",
+	"description": "侧栏多路 MCP：多项目与多工作区并行、多窗口各绑独立通道，连接稳定；支持截图/文件随消息、会话备忘；可先试用 30 分钟再购买。",
+	"version": "1.4.0",
+	"publisher": "sunxingzhe996",
+	"license": "MIT",
+	"keywords": [
+		"mcp",
+		"cursor",
+		"model context protocol",
+		"multi-session",
+		"sidebar",
+		"wukong",
+		"悟空",
+		"chat",
+		"check_messages"
+	],
+	"categories": [
+		"Other"
+	],
+	"engines": {
+		"vscode": "^1.71.0"
+	},
+	"main": "./dist/extension.js",
+	"activationEvents": [
+		"onView:my.cursorMyUi",
+		"onCommand:my.cursorMyUi.configureWorkspace",
+		"onCommand:wukong.generateLicenseKey",
+		"onCommand:wukong.clearLicense"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "my.cursorMyUi.configureWorkspace",
+				"title": "配置工作区（MCP）",
+				"category": "悟空mcp"
+			},
+			{
+				"command": "wukong.generateLicenseKey",
+				"title": "生成卡密（管理员）",
+				"category": "悟空mcp"
+			},
+			{
+				"command": "wukong.clearLicense",
+				"title": "清除本机激活（管理员）",
+				"category": "悟空mcp"
+			}
+		],
+		"configuration": {
+			"title": "悟空mcp",
+			"properties": {
+				"wukong.licenseSecret": {
+					"type": "string",
+					"default": "",
+					"description": "卡密 HMAC 签名密钥。留空则使用内置默认；发卡与验证须使用同一密钥（建议≥8字符）。"
+				},
+				"wukong.adminPassword": {
+					"type": "string",
+					"default": "",
+					"description": "若填写，则「生成卡密」「清除激活」前需输入此密码。"
+				},
+				"wukong.redeemApiBaseUrl": {
+					"type": "string",
+					"default": "http://5245.fun",
+					"description": "云端卡密核销 API 根地址（无尾部斜杠）。非 WKM1. 开头的卡密激活时会 POST 到此地址的 /api/redeem。"
+				},
+				"wukong.payStoreUrl": {
+					"type": "string",
+					"default": "http://5245.fun/pay.html",
+					"description": "侧栏激活页「在线购买」跳转的支付页完整 URL（浏览器打开）。"
+				},
+				"wukong.redeemTimeoutMs": {
+					"type": "number",
+					"default": 20000,
+					"description": "云端核销请求超时（毫秒），范围 3000–120000。"
+				},
+				"wukong.cloudLicenseOnly": {
+					"type": "boolean",
+					"default": false,
+					"description": "为 true 时仅允许云端卡密（走 redeemApiBaseUrl），拒绝 WKM1. 本地卡密。默认 false：云端卡密与 WKM1 本地 HMAC 卡密均可使用。"
+				},
+				"wukong.cloudLicenseVerifyIntervalMs": {
+					"type": "number",
+					"default": 900000,
+					"description": "云端卡密吊销校验间隔（毫秒）：定期请求 /api/license/verify；范围 60000–86400000，默认 15 分钟。"
+				}
+			}
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "wukong-mcp",
+					"title": "悟空mcp",
+					"icon": "resources/icon.svg"
+				}
+			]
+		},
+		"views": {
+			"wukong-mcp": [
+				{
+					"type": "webview",
+					"id": "my.cursorMyUi",
+					"name": "悟空mcp"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"compile": "tsc -p .",
+		"watch": "tsc -p . -w",
+		"package": "vsce package --no-dependencies",
+		"postinstall": "cd mcp-server && npm install"
+	},
+	"devDependencies": {
+		"@types/node": "^16.18.0",
+		"@types/vscode": "^1.71.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^4.7.4",
+		"@vscode/vsce": "^3.7.0"
+	},
+	"__metadata": {
+		"installedTimestamp": 1774780160246,
+		"targetPlatform": "universal",
+		"size": 401564
+	}
+}
