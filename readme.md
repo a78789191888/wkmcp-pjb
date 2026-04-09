@@ -9,14 +9,20 @@
 
 第一步执行：
 npm install
+
+
 安装依赖
 
 第二步执行：
 npm run compile
+
+
 编译
 
 第三步执行：
 npx vsce package --no-dependencies --allow-missing-repository
+
+
 打包
 
 界面截图
@@ -26,6 +32,7 @@ npx vsce package --no-dependencies --allow-missing-repository
 
 
 总结：
+
 npm install
 
 npm run compile
