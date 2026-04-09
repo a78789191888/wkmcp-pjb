@@ -27,7 +27,9 @@ npx vsce package --no-dependencies --allow-missing-repository
 
 总结：
 npm install
+
 npm run compile
+
 npx vsce package --no-dependencies --allow-missing-repository
 
 
